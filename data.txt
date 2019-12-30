@@ -1,1 +1,1 @@
-welcome to new javascript es6 fetch data api. we know fetching text..
+welcome to new javascript es6 fetch data api. we know how to fetch data / text..
