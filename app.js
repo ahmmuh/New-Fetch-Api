@@ -5,11 +5,9 @@ btn1.addEventListener("mouseover", getText);
 
 function getText() {
   fetch("data.txt")
-    .then(function(res) {
-      return res.text();
-    })
+    .then(res => res.text())
 
-    .then(function(data) {
+    .then(data => {
       console.log(data);
       document.getElementById("text").innerHTML = data;
     })
@@ -25,10 +23,8 @@ btn2.addEventListener("click", getJson);
 
 function getJson() {
   fetch("data.json")
-    .then(function(r) {
-      return r.json();
-    })
-    .then(function(data) {
+    .then(data => data.json())
+    .then(data => {
       document.getElementById("json").innerHTML = data.name;
     })
     .catch(function(err) {
@@ -43,10 +39,10 @@ btn3.addEventListener("mouseenter", geExternalData);
 
 function geExternalData() {
   fetch("https://jsonplaceholder.typicode.com/users")
-    .then(function(resapi) {
+    .then(resapi => {
       return resapi.json();
     })
-    .then(function(data) {
+    .then(data => {
       let api = "";
       data.forEach(function(user) {
         api += `<li>${user.name}</li>`;
